@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class AutomobileVO(models.Model):
@@ -31,3 +32,6 @@ class Sale(models.Model):
     customer = models.ForeignKey(
         Customer, related_name="sales", on_delete=models.CASCADE
     )
+
+    def get_api_url(self):
+        return reverse("api_show_customer", kwargs={"pk": self.pk})
