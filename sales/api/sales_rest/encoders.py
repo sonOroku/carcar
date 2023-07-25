@@ -12,7 +12,7 @@ class SalesPersonEncoder(ModelEncoder):
 
 
 class CustomerEncoder(ModelEncoder):
-    model = SalesPerson
+    model = Customer
     properties = [
         "first_name",
         "last_name",
