@@ -10,6 +10,7 @@ import CreateSaleForm from './CreateSaleForm';
 import ManufacturerList from './ManufacturerList';
 import ManufacturerForm from './ManufacturerForm';
 import VehicleModelsList from './VehicleModelsList';
+import VehicleForm from './VehicleForm';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         {/* <Routes>
           <Route path="/" element={<MainPage />} />
         </Routes> */}
-        <VehicleModelsList />
+        <CustomerForm />
       </div>
     </BrowserRouter>
   );
