@@ -81,7 +81,7 @@ def api_sales(request):
                 status=400,
             )
         try:
-            salesperson = SalesPerson.objects.get(employee_id=content["salesperson"])
+            salesperson = SalesPerson.objects.get(id=content["salesperson"])
             content["salesperson"] = salesperson
         except SalesPerson.DoesNotExist:
             return JsonResponse(
@@ -89,7 +89,7 @@ def api_sales(request):
                 status=400,
             )
         try:
-            customer = Customer.objects.get(phone_number=content["customer"])
+            customer = Customer.objects.get(id=content["customer"])
             content["customer"] = customer
         except Customer.DoesNotExist:
             return JsonResponse(
