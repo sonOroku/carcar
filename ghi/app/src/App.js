@@ -11,16 +11,27 @@ import ManufacturerList from './ManufacturerList';
 import ManufacturerForm from './ManufacturerForm';
 import VehicleModelsList from './VehicleModelsList';
 import VehicleForm from './VehicleForm';
+import TechnicianForm from './TechnicianForm';
 
 function App() {
   return (
     <BrowserRouter>
       <Nav />
       <div className="container">
-        {/* <Routes>
+        <Routes>
           <Route path="/" element={<MainPage />} />
-        </Routes> */}
-        <CustomerForm />
+          <Route path="/salesperson" element={<SalespersonForm />} />
+          <Route path="/customer" element={<CustomerForm />} />
+          <Route path="/customers" element={<CustomerList />} />
+          <Route path="/salespeople" element={<SalespersonList />} />
+          <Route path="/sales" element={<SalesList />} />
+          <Route path="/createsale" element={<CreateSaleForm />} />
+          <Route path="/manufacturers" element={<ManufacturerList />} />
+          <Route path="/manufacturer" element={<ManufacturerForm />} />
+          <Route path="/vehiclemodels" element={<VehicleModelsList />} />
+          <Route path="/vehicle" element={<VehicleForm />} />
+          <Route path="/technician" element={<TechnicianForm />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
