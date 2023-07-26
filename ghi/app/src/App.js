@@ -20,7 +20,7 @@ function App() {
         {/* <Routes>
           <Route path="/" element={<MainPage />} />
         </Routes> */}
-        <CustomerForm />
+        <VehicleForm />
       </div>
     </BrowserRouter>
   );
