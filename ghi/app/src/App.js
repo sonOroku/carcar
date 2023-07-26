@@ -12,6 +12,7 @@ import ManufacturerForm from './ManufacturerForm';
 import VehicleModelsList from './VehicleModelsList';
 import VehicleForm from './VehicleForm';
 import TechnicianForm from './TechnicianForm';
+import AutomobileForm from './AutomobileForm';
 import CreateServiceAppointmentForm from './CreateServiceAppointmentForm';
 import TechnicianList from './TechnicianList';
 import ServiceAppointmentsList from './ServiceAppointmentsList';

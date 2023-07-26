@@ -37,7 +37,7 @@ function VehicleForm() {
         const data = {};
         data.name = name;
         data.picture_url = pictureUrl;
-        data.manufacturer = manufacturer;
+        data.manufacturer_id = manufacturer;
 
         const vehicleUrl = 'http://localhost:8100/api/models/';
         const fetchConfig = {
