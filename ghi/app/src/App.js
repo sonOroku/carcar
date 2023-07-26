@@ -12,11 +12,8 @@ import ManufacturerForm from './ManufacturerForm';
 import VehicleModelsList from './VehicleModelsList';
 import VehicleForm from './VehicleForm';
 import TechnicianForm from './TechnicianForm';
-<<<<<<< HEAD
 import AutomobileForm from './AutomobileForm';
-=======
 import CreateServiceAppointmentForm from './CreateServiceAppointmentForm';
->>>>>>> main
 
 function App() {
   return (
@@ -36,11 +33,8 @@ function App() {
           <Route path="/vehiclemodels" element={<VehicleModelsList />} />
           <Route path="/vehicle" element={<VehicleForm />} />
           <Route path="/technician" element={<TechnicianForm />} />
-<<<<<<< HEAD
           <Route path="/automobile" element={<AutomobileForm />} />
-=======
           <Route path="/createserviceappointment" element={<CreateServiceAppointmentForm />} />
->>>>>>> main
         </Routes>
       </div>
     </BrowserRouter>
