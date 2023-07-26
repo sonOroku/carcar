@@ -16,14 +16,27 @@ export default function TechnicianForm() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        const data = {};
+        data.first_name = formData.firstName;
+        data.last_name = formData.lastName;
+        data.employee_id = formData.employeeId;
+
         const url = "http://localhost:8080/api/technicians/";
-        await fetch(url, {
+        const response = await fetch(url, {
             method: "POST",
+            body: JSON.stringify(data),
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(formData),
-        })
+        });
+        if (response.ok) {
+            setFormData({
+                firstName: "",
+                lastName: "",
+                employeeId: "",
+            });
+        }
 
     }
 
