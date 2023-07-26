@@ -112,3 +112,14 @@ def api_show_sales(request, pk):
         )
     except Sale.DoesNotExist:
         return JsonResponse({"message": "Sale doesnt exist"})
+
+
+@require_http_methods(["GET"])
+def unsold_vins(request):
+    sold_vins = []
+    for sale in Sale.objects.all():
+        sold_vins.append(sale.automobile.vin)
+    unsold_vins = AutomobileVO.objects.exclude(vin__in=sold_vins)
+    return JsonResponse(
+        {"automobiles": unsold_vins}, encoder=AutomobileVOEncoder, safe=False
+    )
