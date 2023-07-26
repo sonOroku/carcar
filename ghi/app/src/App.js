@@ -6,6 +6,10 @@ import CustomerForm from './CustomerForm';
 import CustomerList from './CustomerList';
 import SalespersonList from './SalespersonList';
 import SalesList from './SalesList';
+import CreateSaleForm from './CreateSaleForm';
+import ManufacturerList from './ManufacturerList';
+import ManufacturerForm from './ManufacturerForm';
+import VehicleModelsList from './VehicleModelsList';
 
 function App() {
   return (
@@ -15,7 +19,7 @@ function App() {
         {/* <Routes>
           <Route path="/" element={<MainPage />} />
         </Routes> */}
-        <SalesList />
+        <VehicleModelsList />
       </div>
     </BrowserRouter>
   );
