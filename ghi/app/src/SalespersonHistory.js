@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 function SalespersonHistory() {
     const [salespeople, setSalespeople] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
     const fetchData = async () => {
         const url = 'http://localhost:8090/api/salespeople/';
 
@@ -31,6 +32,15 @@ function SalespersonHistory() {
         fetchSales();
       }, []);
 
+      const filteredSales = sales.filter(sale => {
+        if(searchTerm === "") return true;
+        return sale.salesperson.id === Number(searchTerm);
+      });
+
+      const handleChange = (event) => {
+        setSearchTerm(event.target.value);
+      };
+
     return (
         <div className="row">
           <div className="offset-3 col-6">
@@ -38,7 +48,7 @@ function SalespersonHistory() {
               <h1>Salesperson History</h1>
               <form id="salespersonHistory">
                 <div className="mb-3">
-                    <select  required name="salesperson" id="salesperson" className="form-select">
+                    <select onChange={handleChange} required name="salesperson" id="salesperson" className="form-select">
                     <option value="">Choose a Salesperson</option>
                     {salespeople.map(salesperson => {
                       return (
@@ -59,18 +69,18 @@ function SalespersonHistory() {
                     <th>Price</th>
                     </tr>
                 </thead>
-                {/* <tbody>
-                    {customers.map(customer => {
-                    return (
-                        <tr key={customer.id}>
-                        <td>{ customer.first_name }</td>
-                        <td>{ customer.last_name }</td>
-                        <td>{ customer.address }</td>
-                        <td>{ customer.phone_number }</td>
-                        </tr>
-                    )
-                    })}
-                </tbody> */}
+                <tbody>
+                {filteredSales.map(sale => {
+                  return (
+                    <tr key={sale.href}>
+                      <td>{ sale.salesperson.employee_id }</td>
+                      <td>{ sale.customer.first_name }{ sale.customer.last_name }</td>
+                      <td>{ sale.automobile.vin }</td>
+                      <td>{ sale.price }</td>
+                    </tr>
+                  )
+                })}
+                </tbody>
             </table>
             </div>
           </div>
