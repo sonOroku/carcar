@@ -41,6 +41,8 @@ export default function TechnicianForm() {
     }
 
     return (
+        <>
+        <h1>Create Technician</h1>
         <form onSubmit={handleSubmit}>
             <label htmlFor="firstName">First Name</label>
             <input
@@ -68,5 +70,6 @@ export default function TechnicianForm() {
             />
             <button type="submit">Submit</button>
         </form>
+        </>
     );
 }

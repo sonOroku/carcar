@@ -18,6 +18,7 @@ import TechnicianList from './TechnicianList';
 import ServiceAppointmentsList from './ServiceAppointmentsList';
 import ServiceHistory from './ServiceHistory';
 import AutomobilesList from './AutomobilesList';
+import SalespersonHistory from './SalespersonHistory';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route path="/createautomobile" element={<AutomobileForm />} />
           <Route path="/servicehistory" element={<ServiceHistory />} />
           <Route path="/automobiles" element={<AutomobilesList />} />
+          <Route path="/salespersonhistory" element={<SalespersonHistory />} />
         </Routes>
       </div>
     </BrowserRouter>

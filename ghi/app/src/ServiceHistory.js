@@ -18,8 +18,13 @@ export default function ServiceHistory() {
         fetchData();
       }, []);
 
+      const filteredAppointments = appointments.filter(appointment => {
+        return appointment.vin.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+
     return (
         <>
+        <h1>Service History</h1>
 
         <input
             type="text"
@@ -41,14 +46,17 @@ export default function ServiceHistory() {
                 </tr>
             </thead>
             <tbody>
-                {appointments.map(appointment => {
+                {filteredAppointments.map(appointment => {
+                    const dateTime = new Date(appointment.date_time);
+                        const date = new Intl.DateTimeFormat("en-US").format(dateTime);
+                        const time = dateTime.toLocaleTimeString("en-US");
                     return (
                         <tr key={appointment.id}>
                             <td>{ appointment.customer }</td>
                             <td>{ appointment.is_vip ? "Yes" : "No" }</td>
                             <td>{ appointment.vin }</td>
-                            <td>{ appointment.date_time }</td>
-                            <td>{ appointment.date_time }</td>
+                            <td>{ date }</td>
+                            <td>{ time }</td>
                             <td>{ appointment.technician.first_name } { appointment.technician.last_name }</td>
                             <td>{ appointment.reason }</td>
                             <td>{ appointment.status }</td>

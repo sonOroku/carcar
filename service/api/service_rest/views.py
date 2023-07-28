@@ -108,9 +108,9 @@ def api_appointments(request):
                 encoder=AppointmentEncoder,
                 safe=False,
             )
-        except:
+        except Exception as e:
             response = JsonResponse(
-                {"message": "Could not create the appointment"}
+                {"message": "Could not create the appointment", "error": str(e)}
             )
             response.status_code = 400
             return response

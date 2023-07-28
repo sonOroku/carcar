@@ -62,6 +62,8 @@ export default function CreateServiceAppointmentForm() {
     }
 
     return (
+        <>
+        <h1>Create Service Appointment</h1>
         <form onSubmit={handleSubmit}>
             <label htmlFor="customer">Customer</label>
             <input
@@ -102,6 +104,7 @@ export default function CreateServiceAppointmentForm() {
                 onChange={handleChange}
                 value={formData.technician}
             >
+                <option value="" disabled>Select a technician</option>
                 {technicians.map((technician) => (
                     <option key={technician.id}
                     value={technician.id}
@@ -121,5 +124,6 @@ export default function CreateServiceAppointmentForm() {
             />
             <button type="submit">Submit</button>
         </form>
+        </>
     );
 }
